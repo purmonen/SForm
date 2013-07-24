@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">	
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css" rel="stylesheet">
+    <title>SForm</title>
+	<script src="sform.js"></script>
+</head>
+<body>
+	<div class="container">
+
+		<div class="page-header">
+			<h1><i class="icon-rocket"></i> SForm <small>Easier form handling</small></h1>
+		</div>
+
+		<div class="row">
+
+		<div class="span6">
+		<h3>On keyup</h3>
+
+		<form class="SForm form-horizontal" data-event="keyup">
+			<div class="control-group">
+				<label class="control-label" for="name-input">Name</label>
+				<div class="controls">
+					<input id="name-input" autofocus type="text" class="SForm-field" data-required data-min="5">
+					<span class="SForm-required">*</span>
+					<span class="SForm-min">Too short</span>
+					<span class="SForm-success">Fine!</span>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="age-input">Age</label>
+				<div class="controls">
+					<input id="age-input" type="text" class="SForm-field" data-required data-type="int">
+					<span class="SForm-required" data-copy="name-input"></span>
+					<span class="SForm-type">Number please!</span>
+					<span class="SForm-success" data-copy="name-input"></span>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="email-input">Email</label>
+				<div class="controls">
+					<input id="email-input" type="text" class="SForm-field" data-required data-type="email">
+					<span class="SForm-required">*</span>
+					<span class="SForm-type">Please enter a valid email</span>
+					<span class="SForm-success">Great!</span>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="confirm-email-input">Confirm email</label>
+				<div class="controls">
+					<input id="confirm-email-input" type="text" class="SForm-field" data-required data-refers="email-input">
+					<span class="SForm-required" data-copy="name-input"></span>
+					<span class="SForm-refers">Emails should match</span>
+					<span class="SForm-success" data-copy="name-input"></span>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="message-input">Message</label>
+				<div class="controls">
+					<textarea id="message-input" class="SForm-field" data-required data-min="10" data-custom="hasS"></textarea>
+					<span class="SForm-required" data-copy="name-input"></span>
+					<span class="SForm-min">Message is too short</span>
+					<span class="SForm-success" data-copy="name-input"></span>
+					<span class="SForm-custom">Message must include S!</span>
+				</div>
+			</div>
+
+			<div class="controls">
+				<input type="submit" class="btn btn-primary" value="Submit">
+			</div>
+		</form>
+
+		<hr>
+		</div>
+
+		<div class="span6">
+		<h3>On blur</h3>
+		<form class="SForm form-horizontal" data-event="keyup">
+
+			<div class="control-group">
+				<label class="control-label">Name</label>
+				<div class="controls">
+					<input type="text" class="SForm-field" data-required data-min="5">
+					<span class="SForm-required">*</span>
+					<span class="SForm-min">Too short</span>
+					<span class="SForm-success">Fine!</span>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label">Age</label>
+				<div class="controls">
+					<input type="text" class="SForm-field" data-required data-type="int">
+					<span class="SForm-required">*</span>
+					<span class="SForm-type">Number please!</span>
+					<span class="SForm-success">Great!</span>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label">Email</label>
+				<div class="controls">
+					<input id="email2" type="text" class="SForm-field" data-required data-type="email">
+					<span class="SForm-required">*</span>
+					<span class="SForm-type">Please enter a valid email</span>
+					<span class="SForm-success">Great!</span>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label">Confirm email</label>
+				<div class="controls">
+					<input type="text" class="SForm-field" data-required data-refers="email2">
+					<span class="SForm-required">*</span>
+					<span class="SForm-refers">Emails should match</span>
+					<span class="SForm-success">Great!</span>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label">Message</label>
+				<div class="controls">
+					<textarea class="SForm-field" data-required data-min="10"></textarea>
+					<span class="SForm-required">*</span>
+					<span class="SForm-min">Message is too short</span>
+					<span class="SForm-success">Great!</span>
+				</div>
+			</div>
+
+			<div class="controls">
+				<input type="submit" class="btn btn-primary" value="Submit">
+			</div>
+			</form>
+	</div>
+</div>
+</div>
+
+<script>
+function hasS(value) {
+	return value.search('s') !== -1;
+}
+</script>
+</body>
+</html>

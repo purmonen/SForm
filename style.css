@@ -1,0 +1,23 @@
+[class*="SForm-"] {
+	display: none;
+}
+
+.SForm-field {
+	display: inline;
+}
+
+.SForm-success {
+	color: #0f0;
+}
+
+.SForm-valid {
+	background-color: #efe !important;
+}
+
+.SForm-invalid {
+	background-color: #fee !important;
+}
+
+.SForm-invalid ~ span {
+	color: #f00;
+}

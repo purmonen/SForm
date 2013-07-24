@@ -1,0 +1,32 @@
+# SForm - Jquery plugin
+#
+#
+#
+#
+# Author: Sami Purmonen
+
+--Purpose
+Make client-side form handling easier and remove redundancy.
+
+
+--Ease-of-use
+To make this as easy as possible client page should only
+need to create an html form according to a certain structure
+and then call the plugin.
+
+--Customization
+Error messages and styling should be decided entirely by the client page.
+
+
+--Responsive validation
+The most responsive way to handle form submissions is direct
+validation. Whenever a client moves away from one field he should
+be informed whether input was correct or incorrect.
+
+--Validation support
+*Integers
+*Floats
+*Required
+*Email
+*Verification
+*Min/max-length
